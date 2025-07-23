@@ -42,3 +42,9 @@ def test_cards_are_no_longer_possible_for_other_player_after_draw(deck: Deck):
 def test_hand_size_starts_at_0():
     player = Player(player_id=0, num_players=4)
     assert len(player.hand) == 0
+
+
+def test_hand_size_goes_up_after_draw(deck: Deck):
+    player = Player(player_id=0, num_players=4)
+    player.draw(deck)
+    assert len(player.hand) == 1
