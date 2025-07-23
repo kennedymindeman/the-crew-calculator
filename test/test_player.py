@@ -28,3 +28,12 @@ def test_cards_are_no_longer_possible_after_draw(deck: Deck):
     player = Player(player_id=0, num_players=num_players)
     card = player.draw(deck)
     assert card not in player.player_views[0].possible_cards
+
+
+def test_cards_are_no_longer_possible_for_other_player_after_draw(deck: Deck):
+    num_players = 4
+    player_id = 0
+    next_player_id = (player_id + 1) % num_players
+    player = Player(player_id=player_id, num_players=num_players)
+    card = player.draw(deck)
+    assert card not in player.player_views[next_player_id].possible_cards
