@@ -18,3 +18,6 @@ class Deck:
 
     def deal(self) -> Card:
         return self.draw_pile.pop()
+
+    def is_empty(self) -> bool:
+        return len(self.draw_pile) == 0
