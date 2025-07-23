@@ -31,4 +31,4 @@ def test_eliminate_card_removes_it_from_possible_cards():
     card = Card(Suit.BLACK, 3)
     player_view = PlayerView()
     player_view.eliminate_card(card)
-    assert card not in player_view.possible
+    assert card not in player_view.possible_cards
