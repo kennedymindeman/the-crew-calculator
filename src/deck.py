@@ -15,3 +15,6 @@ class Deck:
 
     def shuffle(self) -> None:
         shuffle(self.draw_pile)
+
+    def deal(self) -> Card:
+        return self.draw_pile.pop()
