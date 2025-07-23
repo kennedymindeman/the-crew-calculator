@@ -21,3 +21,10 @@ def test_cards_are_certain_after_draw(deck: Deck):
     player = Player(player_id=0, num_players=num_players)
     card = player.draw(deck)
     assert card in player.player_views[0].certain_cards
+
+
+def test_cards_are_no_longer_possible_after_draw(deck: Deck):
+    num_players = 4
+    player = Player(player_id=0, num_players=num_players)
+    card = player.draw(deck)
+    assert card not in player.player_views[0].possible_cards
