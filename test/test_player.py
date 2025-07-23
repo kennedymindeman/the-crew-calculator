@@ -16,7 +16,7 @@ def test_player_has_player_view_equal_to_number_of_players():
     assert len(player.player_views) == num_players
 
 
-def test_no_cards_known_before_draw(deck: Deck):
+def test_cards_are_certain_after_draw(deck: Deck):
     num_players = 4
     player = Player(player_id=0, num_players=num_players)
     card = player.draw(deck)
