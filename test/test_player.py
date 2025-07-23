@@ -37,3 +37,8 @@ def test_cards_are_no_longer_possible_for_other_player_after_draw(deck: Deck):
     player = Player(player_id=player_id, num_players=num_players)
     card = player.draw(deck)
     assert card not in player.player_views[next_player_id].possible_cards
+
+
+def test_hand_size_starts_at_0():
+    player = Player(player_id=0, num_players=4)
+    assert len(player.hand) == 0
