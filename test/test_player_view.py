@@ -17,4 +17,11 @@ def test_mark_has_card_removes_card_from_possible_cards():
     card = Card(Suit.BLACK, 3)
     player_view = PlayerView()
     player_view.mark_has_card(card)
+    assert card not in player_view.possible_cards
+
+
+def test_mark_has_card_adds_it_to_certain_cars():
+    card = Card(Suit.BLACK, 3)
+    player_view = PlayerView()
+    player_view.mark_has_card(card)
     assert card in player_view.certain_cards
