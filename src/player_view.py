@@ -13,3 +13,4 @@ class PlayerView:
 
     def eliminate_card(self, card: Card) -> None:
         self.possible_cards.discard(card)
+        self.certain_cards.discard(card)
