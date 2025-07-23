@@ -1,4 +1,4 @@
-from src.card import Card
+from src.card import Card, Suit
 from src.deck import Deck
 from src.player_view import PlayerView
 
@@ -16,3 +16,9 @@ class Player:
         self.player_views[self.player_id].mark_has_card(card)
         self.hand.add(card)
         return card
+
+    def get_playable_cards(self, suit : Suit | None = None) -> set[Card]:
+        cards_in_suit = {card for card in self.hand if card.suit == suit}
+        if cards_in_suit:
+            return cards_in_suit
+        return self.hand
