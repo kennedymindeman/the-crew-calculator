@@ -18,3 +18,10 @@ def test_deck_shuffle_results_in_unique_deck():
     for deck in decks:
         deck.shuffle()
     assert decks[0].draw_pile != decks[1].draw_pile
+
+
+def test_dealt_card_not_in_draw_pile():
+    random.seed(0)
+    deck = Deck()
+    card = deck.deal()
+    assert card not in deck.draw_pile
