@@ -25,3 +25,10 @@ def test_dealt_card_not_in_draw_pile():
     deck = Deck()
     card = deck.deal()
     assert card not in deck.draw_pile
+
+
+def test_deck_is_empty_after_all_cards_are_dealt():
+    deck = Deck()
+    while deck.draw_pile:
+        deck.deal()
+    assert deck.is_empty()
