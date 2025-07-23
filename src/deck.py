@@ -1,3 +1,4 @@
+from random import shuffle
 from src.card import Card, Suit
 
 
@@ -11,3 +12,6 @@ class Deck:
 
     def __init__(self) -> None:
         self.draw_pile = list(Deck.ALL_CARDS)
+
+    def shuffle(self) -> None:
+        shuffle(self.draw_pile)
