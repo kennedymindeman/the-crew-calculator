@@ -48,3 +48,8 @@ def test_hand_size_goes_up_after_draw(deck: Deck):
     player = Player(player_id=0, num_players=4)
     player.draw(deck)
     assert len(player.hand) == 1
+
+
+def test_playable_cards_in_empty_hand():
+    player = Player(player_id = 0, num_players=4)
+    assert player.get_playable_cards() == set()
