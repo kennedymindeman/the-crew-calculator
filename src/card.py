@@ -13,4 +13,4 @@ class Suit(Enum):
 @dataclass(frozen=True)
 class Card:
     suit: Suit
-    rank: int
+    value: int
